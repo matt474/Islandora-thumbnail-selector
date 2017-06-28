@@ -18,7 +18,7 @@
  * @return array
  *   A Drupal select table form element.
  */
-function islandora_thumbnail_selector_get_children_thumbnail_select_table_form_element(AbstractObject $object, array $pager_options) {
+function islandora_thumbnail_selector_get_thumbnail_select_form_element(AbstractObject $object, array $pager_options) {
   // Assumes all results are returned although the function description
   // states otherwise.
   module_load_include('inc', 'islandora', 'includes/utilities');

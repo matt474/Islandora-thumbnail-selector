@@ -44,7 +44,7 @@ function islandora_thumbnail_selector_form(array $form, array &$form_state, Abst
     $form_state['collection'] = $object;
     return array(
     '#action' => request_uri() . '#select-thumbnail',
-    'child' => islandora_thumbnail_selector_get_children_thumbnail_select_table_form_element($object, array(
+    'child' => islandora_thumbnail_selector_get_thumbnail_select_form_element($object, array(
       'element' => 4,
       'fragment' => '#select-thumbnail',
     )),
