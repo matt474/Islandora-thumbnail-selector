@@ -1,0 +1,7 @@
+name = Islandora Thumbnail Selector
+dependencies[] = islandora
+dependencies[] = islandora_basic_collection
+description = Select thumbnails for Islandora Collections
+package = Islandora Tools
+version = 7.x-dev
+core = 7.x
