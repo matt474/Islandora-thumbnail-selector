@@ -44,13 +44,13 @@ function islandora_thumbnail_selector_form(array $form, array &$form_state, Abst
     $form_state['collection'] = $object;
     return array(
     '#action' => request_uri() . '#select-thumbnail',
-    'children' => islandora_thumbnail_selector_get_children_thumbnail_select_table_form_element($object, array(
+    'child' => islandora_thumbnail_selector_get_children_thumbnail_select_table_form_element($object, array(
       'element' => 4,
       'fragment' => '#select-thumbnail',
     )),
     'description' => array(
       '#type' => 'item',
-      '#markup' => t('Choose a child object to use its thumbnail.<br/>This form should have radio buttons'),
+      '#markup' => t('Choose a child object to use its thumbnail.'),
     ),
     'submit' => array(
       '#type' => 'submit',
@@ -74,8 +74,10 @@ function islandora_thumbnail_selector_form(array $form, array &$form_state, Abst
 function islandora_thumbnail_selector_form_submit(array $form, array &$form_state) {
   $collection = $form_state['collection'];
   
-  $children = array_keys(array_filter($form_state['values']['children']));
+  $child = $form_state['values']['child'];
   
-  if(in_array(0, $children))
-    islandora_thumbnail_selector_replace_thumbnail($collection, islandora_object_load($children[0]));
+  if($child != null)
+    islandora_thumbnail_selector_replace_thumbnail($collection, islandora_object_load($child));
+  else
+    dpm("No object selected");
 }

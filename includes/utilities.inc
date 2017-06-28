@@ -52,6 +52,8 @@ function islandora_thumbnail_selector_get_children_thumbnail_select_table_form_e
     ),
     '#options' => $rows,
     '#empty' => t('Collection is empty.'),
+    '#js_select' => FALSE,
+    '#multiple' => FALSE,
     '#prefix' => $pager,
     '#suffix' => $pager,
   );
