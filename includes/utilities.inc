@@ -71,6 +71,11 @@ function islandora_thumbnail_selector_get_thumbnail_select_form_element(Abstract
 function islandora_thumbnail_selector_replace_thumbnail(AbstractObject $object, AbstractObject $tn_object) {
   module_load_include('inc', 'islandora', 'includes/utilities');
   
+  if($tn_object['TN'] == null){
+    drupal_set_message(t('The specified object does not have a thumbnail'),'error');
+    return;
+  }
+  
   $mime_detector = new MimeDetect();
   $ext = $mime_detector->getExtension($tn_object['TN']->mimeType);
   // Windows will likely store temp data in a temp directory
