@@ -4,6 +4,13 @@
 
 Islandora thumbnail selector for collection objects.
 
+## Requirements
+
+This module requires the following modules/libraries:
+
+* [Islandora](https://github.com/islandora/islandora)
+* [Islandora Basic Collection](https://github.com/Islandora/islandora_solution_pack_collection)
+
 ## Use
 
 Open the collection managment screen.
