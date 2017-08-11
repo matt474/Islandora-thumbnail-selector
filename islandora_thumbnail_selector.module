@@ -79,5 +79,5 @@ function islandora_thumbnail_selector_form_submit(array $form, array &$form_stat
   if($child != null)
     islandora_thumbnail_selector_replace_thumbnail($collection, islandora_object_load($child));
   else
-    dpm("No object selected");
+    drupal_set_message(t('Can not update thumbnail. No object has been specified.'),'error');
 }

@@ -72,8 +72,8 @@ function islandora_thumbnail_selector_replace_thumbnail(AbstractObject $object, 
   module_load_include('inc', 'islandora', 'includes/utilities');
   
   if($tn_object['TN'] == null){
-    drupal_set_message(t('The specified object does not have a thumbnail'),'error');
-    return;
+    drupal_set_message(t('The specified object does not have a thumbnail.'),'error');
+    return false;
   }
   
   $mime_detector = new MimeDetect();
@@ -87,5 +87,6 @@ function islandora_thumbnail_selector_replace_thumbnail(AbstractObject $object, 
   $ds = $object['TN'];
   $ds->setContentFromFile($file, true);
   file_unmanaged_delete($file);
+  drupal_set_message(t('The thumbnail has been updated.'));
   return true;
 }
